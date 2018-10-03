@@ -1,0 +1,23 @@
+<nav class="navigation">
+  <div class="wrapper-back">
+    <a href="/hosts<?php if(isset($hostsItemEdit['id'])) {echo '/' . $hostsItemEdit['id'];}?>">
+      <?php 
+        if(isset($hostsItemEdit['id']) || isset($hostsItem['id']) || isset($hostsItemAdd[0]) || isset($toolsEdit)) {
+          echo '<input type="button" name="back" value="назад">';
+        } else {
+          echo '<input type="button" name="hbackup" value="hBackup">';
+        }
+      ?>
+    </a>
+  </div>
+  <div class="wrapper-add-node">
+    <a href="/hosts/add">
+      <input type="button" name="node_add" value="добавить новый узел">
+    </a>
+  </div>
+  <div class="wrapper-personal-data">
+    <a href="/hosts/tools">
+      <input type="button" name="personal-data" value="<?php if(isset($_SESSION['username'])) {echo $_SESSION['username'];} ?>">
+    </a>
+  </div>
+</nav>
